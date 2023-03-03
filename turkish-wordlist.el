@@ -32,11 +32,10 @@
 (defun turkish-wordlist--write-file (filename)
   (write-region (format "%S" turkish-wordlist-filtered-list) nil filename))
 
-
-
 (defun turkish-wordlist ()
   (interactive)
   (let ((filename "turkish-wordlist"))
+    (turkish-wordlist--download)
     (turkish-wordlist--filter)
     (turkish-wordlist--write-file filename)))
 
